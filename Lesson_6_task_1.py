@@ -30,9 +30,9 @@ for stops in bus_routes['stops']:
         adj_list[stops[i]].append(stops[i + 1])
         adj_list[stops[i + 1]].append(stops[i])
 
-print("\nAdjective list:")
-for stop, neighbors in adj_list.items():
-    print(f"{stop}: {neighbors}")
+# print("\nAdjective list:")
+# for stop, neighbors in adj_list.items():
+#     print(f"{stop}: {neighbors}")
 
 G = nx.Graph()  # Неорієнтований граф
 
@@ -51,3 +51,10 @@ nx.draw(
 )
 ax.set_title("Граф автобусних маршрутів", fontsize=16)
 plt.show()
+
+# Аналіз графа
+print(f'Number of nodes for buses routes graph are: {G.number_of_nodes()}')
+print(f'Number of adges for buses routes graph are: {G.number_of_edges()}')
+degrees = dict(G.degree())
+for node, degree in degrees.items():
+    print(f"Node {node} has degrees {degree}")
