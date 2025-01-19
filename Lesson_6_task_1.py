@@ -30,9 +30,9 @@ for stops in bus_routes['stops']:
         adj_list[stops[i]].append(stops[i + 1])
         adj_list[stops[i + 1]].append(stops[i])
 
-# print("\nAdjective list:")
-# for stop, neighbors in adj_list.items():
-#     print(f"{stop}: {neighbors}")
+print("\nAdjective list:")
+for stop, neighbors in adj_list.items():
+    print(f"{stop}: {neighbors}")
 
 G = nx.Graph()  # Неорієнтований граф
 
